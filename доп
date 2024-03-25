@@ -1,0 +1,155 @@
+#include <stdio.h>
+
+int main() {
+    while(1) {
+        int x;
+        printf("Введите номер функции:\n1. Транспонировать эти матрицы.\n2. Сложить эти матрицы.\n3. Умножить эти матрицы.\n0. Завершить программу.\n");
+
+        scanf("%d", &x);
+
+        switch(x) {
+            case 1: {
+                  int matrix1[3][3];
+    int matrix2[3][3];
+    int matrix3[3][3];
+    int matrix4[3][3];
+    
+
+    printf("Введите элементы первой матрицы 3x3:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+    
+
+    printf("Введенная матрица 1:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            printf("%d ", matrix1[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("Введите элементы второй матрицы 3x3:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            scanf("%d", &matrix3[i][j]);
+        }
+    }
+    
+
+    printf("Введенная матрица 2:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            printf("%d ", matrix3[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("Транспонированная матрица 2:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            matrix4[i][j] = matrix3[j][i];
+            printf("%d ", matrix4[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Транспонированная матрица 1:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            matrix2[i][j] = matrix1[j][i];
+            printf("%d ", matrix2[i][j]);
+        }
+        printf("\n");
+    }
+  break;
+                }
+                
+ 
+            case 2: {
+               int matrix1[3][3];
+    int matrix2[3][3];
+    int result[3][3];
+    
+
+    printf("Введите элементы первой матрицы 3x3:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+    
+
+    printf("Введите элементы второй матрицы 3x3:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+    
+
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+    
+
+    printf("Результат сложения матриц:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+                break;
+            }
+            case 3: {
+                 int matrix1[3][3];
+    int matrix2[3][3];
+    int result[3][3];
+    
+
+    printf("Введите элементы первой матрицы 3x3:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+    
+
+    printf("Введите элементы второй матрицы 3x3:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+    
+
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            result[i][j] = matrix1[i][j] * matrix2[i][j];
+        }
+    }
+    
+
+    printf("Результат умножения матриц:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+                break;
+            }
+            case 0: {
+                return 0;
+            }
+            default:
+                printf("Введите другое число.\n");
+                break;
+        }
+    }
+    return 0;
+}
